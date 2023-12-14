@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/titleContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#795695"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MerchBuya"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <!-- Menu Bar with Buttons -->
+    <RelativeLayout
+        android:id="@+id/menuBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleContainer"
+        android:layout_marginTop="16dp">
+
+        <!-- Line underneath the buttons -->
+        <Button
+            android:id="@+id/GpsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:onClick="openGpsScreen"
+            android:text="GPS"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/FilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="62dp"
+            android:layout_toEndOf="@+id/GpsButton"
+            android:onClick="openFilterScreen"
+            android:text="Filter"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/CartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-388dp"
+            android:layout_toEndOf="@+id/FilterButton"
+            android:onClick="openCartScreen"
+            android:text="Cart"
+            android:textColor="@android:color/white" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/CartButton"
+            android:background="@android:color/black" />
+
+    </RelativeLayout>
+
+    <!-- Black Bar -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/menuBar"
+        android:background="@android:color/black" />
+
+    <!-- Content Container -->
+    <RelativeLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menuBar"
+        android:layout_marginTop="16dp">
+
+        <!-- Frame 1 -->
+        <RelativeLayout
+            android:id="@+id/frame1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/contentImage1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:id="@+id/textContainer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@+id/contentImage1">
+
+                <TextView
+                    android:id="@+id/titleText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Band T-Shirt"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descriptionHeader1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titleText1"
+                    android:layout_marginTop="-1dp"
+                    android:text="€25"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descriptionText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/descriptionHeader1"
+                    android:text="100% Cotton, single-stitched shirt"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_below="@+id/frame1" />
+
+        <!-- Frame 2 -->
+        <RelativeLayout
+            android:id="@+id/frame2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frame1"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/contentImage2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:id="@+id/textContainer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@+id/contentImage2">
+
+                <TextView
+                    android:id="@+id/titleText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Official Band Coffee Mug"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descriptionHeader2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titleText2"
+                    android:layout_marginTop="-1dp"
+                    android:text="€15"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descriptionText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/descriptionHeader2"
+                    android:text="Band's very own coffee mug, fully insulated to keep warm"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_below="@+id/frame2" />
+
+        <!-- Frame 3 -->
+        <RelativeLayout
+            android:id="@+id/frame3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frame2"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/contentImage3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:id="@+id/textContainer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@+id/contentImage3">
+
+                <TextView
+                    android:id="@+id/titleText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Band Heavyweight Hoodie"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descriptionHeader3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titleText3"
+                    android:layout_marginTop="-1dp"
+                    android:text="€40"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descriptionText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/descriptionHeader3"
+                    android:text="Thick cotton band hoodie"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_below="@+id/frame3" />
+
+        <!-- Frame 4 -->
+        <RelativeLayout
+            android:id="@+id/frame4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frame3"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/contentImage4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:id="@+id/textContainer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@+id/contentImage4">
+
+                <TextView
+                    android:id="@+id/titleText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Band Signature Guitar Picks (Pack of 12)"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descriptionHeader4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titleText4"
+                    android:layout_marginTop="0dp"
+                    android:text="€10"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descriptionText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/descriptionHeader4"
+                    android:text="Designed by lead singer of Band"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_below="@+id/frame4" />
+
+        <!-- RecyclerView to display data -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/idRVCourses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frame4"
+            android:layout_marginTop="16dp" />
+
+        <!-- FloatingActionButton to add new courses -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/idFABAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="18dp"
+            android:src="@android:drawable/ic_input_add"
+            app:tint="@android:color/white" />
+
+        <!-- Switch for light/dark mode -->
+        <Switch
+            android:id="@+id/lightDarkSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Light/Dark Mode"
+            android:layout_below="@id/idRVCourses"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:checked="false" />
+    </RelativeLayout>
+</RelativeLayout>
