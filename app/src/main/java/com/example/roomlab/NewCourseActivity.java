@@ -53,7 +53,7 @@ public class NewCourseActivity extends AppCompatActivity {
                 String courseDesc = courseDescEdt.getText().toString();
                 String courseDuration = courseDurationEdt.getText().toString();
                 if (courseName.isEmpty() || courseDesc.isEmpty() || courseDuration.isEmpty()) {
-                    Toast.makeText(NewCourseActivity.this, "Please enter the valid course details.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewCourseActivity.this, "Please enter the valid item details.", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 // calling a method to save our course.
@@ -81,6 +81,6 @@ public class NewCourseActivity extends AppCompatActivity {
         setResult(RESULT_OK, data);
 
         // displaying a toast message after adding the data
-        Toast.makeText(this, "Course has been saved to Room Database. ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Item has been saved to Cart. ", Toast.LENGTH_SHORT).show();
     }
 }

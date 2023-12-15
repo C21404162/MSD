@@ -17,14 +17,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         this.cartItems = cartItems;
     }
 
-    // Interface for item click events
     public interface OnItemClickListener {
         void onItemClick(CartItem cartItem);
     }
 
-    // Method to set the click listener
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
+    }
+
+    public void setCartItems(List<CartItem> cartItems) {
+        this.cartItems = cartItems;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -41,7 +44,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         holder.itemDescriptionTextView.setText(cartItem.getItemDescription());
         holder.itemPriceTextView.setText(cartItem.getItemPrice());
 
-        // Set an OnClickListener for your item view
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,3 +72,4 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         }
     }
 }
+

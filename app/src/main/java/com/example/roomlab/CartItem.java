@@ -29,7 +29,6 @@ public class CartItem {
         this.id = id;
     }
 
-    // Getter and Setter for itemName
     public String getItemName() {
         return itemName;
     }
@@ -38,7 +37,6 @@ public class CartItem {
         this.itemName = itemName;
     }
 
-    // Getter and Setter for itemDescription
     public String getItemDescription() {
         return itemDescription;
     }
@@ -47,7 +45,6 @@ public class CartItem {
         this.itemDescription = itemDescription;
     }
 
-    // Getter and Setter for itemPrice
     public String getItemPrice() {
         return itemPrice;
     }

@@ -74,7 +74,6 @@
             android:layout_marginEnd="16dp"
             android:text="Checkout" />
 
-        <!-- FloatingActionButton to add new courses -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/idFABAdd"
             android:layout_width="wrap_content"

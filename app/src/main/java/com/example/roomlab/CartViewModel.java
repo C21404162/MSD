@@ -16,7 +16,6 @@ public class CartViewModel extends AndroidViewModel {
         allCartItems = repository.getAllCartItems();
     }
 
-    // Non-static insert method
     public void insert(CartItem cartItem) {
         repository.insert(cartItem);
     }

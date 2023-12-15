@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context=".NewCourseActivity">
 
-    <!--edit text for our course name-->
     <EditText
         android:id="@+id/idEdtCourseName"
         android:layout_width="match_parent"
@@ -15,7 +14,6 @@
         android:layout_margin="10dp"
         android:hint="Enter Item Name" />
 
-    <!--edit text for our course description-->
     <EditText
         android:id="@+id/idEdtCourseDescription"
         android:layout_width="match_parent"
@@ -23,7 +21,6 @@
         android:layout_margin="10dp"
         android:hint="Enter Item Description" />
 
-    <!--edit text for course description-->
     <EditText
         android:id="@+id/idEdtCourseDuration"
         android:layout_width="match_parent"
@@ -31,7 +28,6 @@
         android:layout_margin="10dp"
         android:hint="Item Price" />
 
-    <!--button for saving data to room database-->
     <Button
         android:id="@+id/idBtnSaveCourse"
         android:layout_width="match_parent"
