@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openCartScreen(View view) {
         // Replace PlaceholderActivity with the actual activity you want to open for Cart
-        Intent intent = new Intent(this, PlaceholderActivity.class);
+        Intent intent = new Intent(this, Cart.class);
         startActivity(intent);
     }
 }

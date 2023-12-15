@@ -20,6 +20,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA7lpUs27J7Q76r2rnJu9rnB8gOf6z_jTk" />
         <activity
+            android:name=".Cart"
+            android:exported="false"/>
+        <activity
             android:name=".GPS"
             android:exported="false"/>
         <activity
