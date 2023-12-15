@@ -340,17 +340,10 @@
             android:src="@android:drawable/ic_input_add"
             app:tint="@android:color/white" />
 
-        <!-- Switch for light/dark mode -->
-        <Switch
-            android:id="@+id/lightDarkSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Light/Dark Mode"
-            android:layout_below="@id/idRVCourses"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:checked="false" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
     </RelativeLayout>
 </RelativeLayout>

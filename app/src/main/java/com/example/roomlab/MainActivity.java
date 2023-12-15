@@ -3,7 +3,6 @@ package com.example.roomlab;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 import android.widget.ImageView;
@@ -29,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView coursesRV;
     private static final int EDIT_COURSE_REQUEST = 2;
     private ViewModal viewmodal;
-    private Switch lightDarkSwitch;
+    private CartViewModel cartViewModel;
+    private CartAdapter cartAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 adapter.submitList(models);
             }
         });
+
         // below method is use to add swipe to delete method for item of recycler view.
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
@@ -128,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -155,7 +158,37 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Cart not saved", Toast.LENGTH_SHORT).show();
         }
 
+        List<CartItem> cartItems = null /* get your cart items */;
+
+// Create an instance of CartAdapter
+        CartAdapter cartAdapter = new CartAdapter(cartItems);
+
+// Set the item click listener using the instance
+        cartAdapter.setOnItemClickListener(new CartAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(CartItem cartItem) {
+                // Handle item click, e.g., add to cart
+                addToCart(cartItem.getItemName(), cartItem.getItemDescription(), cartItem.getItemPrice());
+                Toast.makeText(MainActivity.this, "Item added to cart", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Set the adapter to your RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.cartRecyclerView);
+        recyclerView.setAdapter(cartAdapter);
+
     }
+
+    private void addToCart(String itemName, String itemDescription, String itemPrice) {
+        // Create an instance of CartViewModel
+        CartViewModel cartViewModel = new CartViewModel(getApplication());
+
+        // Add the item to the cart using your CartViewModel instance
+        cartViewModel.insert(new CartItem(itemName, itemDescription, itemPrice));
+
+        Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show();
+    }
+
     public void openGpsScreen(View view) {
         // Replace PlaceholderActivity with the actual activity you want to open for GPS
         Intent intent = new Intent(this, GPS.class);
@@ -170,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openCartScreen(View view) {
         // Replace PlaceholderActivity with the actual activity you want to open for Cart
-        Intent intent = new Intent(this, Cart.class);
+        Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }
 }
